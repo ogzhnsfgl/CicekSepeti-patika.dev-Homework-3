@@ -1,0 +1,185 @@
+.card {
+  width: 35rem;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(39, 19, 116, 0.582);
+  box-shadow: rgba(177, 174, 174, 0.07) 0px 1px 2px,
+    rgba(182, 178, 178, 0.07) 0px 2px 4px, rgba(167, 165, 165, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(197, 192, 192, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  backdrop-filter: blur(1px);
+  border-radius: 0;
+  color: wheat;
+
+  &-img {
+    overflow: hidden;
+    transition: all 3s;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    height: 4rem;
+    background: rgba(65, 61, 61, 0.411);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    z-index: 1;
+    position: relative;
+    transition: all 1s;
+    font-weight: 600;
+
+    .rating {
+      color: whitesmoke;
+      top: 0;
+      right: 0;
+      width: 22%;
+      .fa-star {
+        margin-left: 2px;
+      }
+      .fa-star:hover {
+        transform: scale(1.05);
+        color: rgba(216, 195, 195, 0.932);
+      }
+    }
+    &-duration {
+      position: absolute;
+      bottom: 3.4rem;
+      right: 0rem;
+      background: rgba(31, 30, 30, 0.555);
+      width: 4rem;
+      padding: 0 1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-style: italic;
+      border-top-left-radius: 0.4rem;
+      backdrop-filter: 10px;
+      font-size: 0.8rem;
+    }
+  }
+  .card-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(143, 15, 15, 0.767);
+    display: block;
+    opacity: 0;
+    transition: all 1s;
+    border-bottom-left-radius: 1.2rem;
+  }
+
+  &-play-button {
+    display: none;
+    opacity: 1;
+    color: gray;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 1s;
+
+    .fa-play-circle {
+      color: white;
+      transition: all 1s;
+    }
+    .fa-play-circle:hover {
+      color: rgb(223, 162, 223);
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+    color: whitesmoke;
+    .card-play-button {
+      background-color: rgba(105, 103, 103, 0.452);
+      opacity: 1;
+      color: whitesmoke;
+    }
+    .card-btn {
+      opacity: 1;
+      transform: translate(-25px, 23px);
+      border-left: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+        background-color: rgb(218, 16, 16);
+      }
+    }
+  }
+}
+
+.modal {
+  z-index: 100;
+}
+
+.ReactModal {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.753);
+  &__Overlay {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+  }
+  &__Content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .modal-info {
+      position: relative;
+      background: rgba(173, 167, 167, 0.596);
+      width: 25%;
+      margin-right: 2rem;
+      font-size: 1.2rem;
+      padding: 1rem;
+
+      &-title {
+        font-weight: 600;
+      }
+      &-author {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bolder;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      border-radius: 1rem;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import 'reset';
+@import 'variables';
+@import 'cardList.scss';
+@import 'modal.scss';
+@import 'footer.scss';
+@import 'navbar.scss';
+@import 'card.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap');
+
+html {
+  font-size: 10px;
+  // font-family: 'Monoton', cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+body {
+  background: rgb(80, 40, 240);
+  background: linear-gradient(
+    180deg,
+    rgba(80, 40, 240, 1) 0%,
+    rgba(56, 96, 190, 1) 9%,
+    rgba(18, 18, 18, 1) 25%
+  );
+}
+
+.container {
+  max-width: 110rem;
+  width: 100%;
+  margin: 0 auto;
+}
