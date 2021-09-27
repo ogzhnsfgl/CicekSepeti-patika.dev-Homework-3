@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 const Navbar = ({ input, setInput }) => {
+  /* Every input on search bar */
   const handleInput = (e) => {
     setInput(e.target.value);
   };

@@ -77,8 +77,10 @@
       outline: none;
       margin-left: 0.2rem;
       color: gray;
+      letter-spacing: 1.5px;
       &::placeholder {
         color: rgb(128, 135, 141);
+        letter-spacing: 1.5px;
       }
       &::-webkit-search-cancel-button {
         appearance: none;

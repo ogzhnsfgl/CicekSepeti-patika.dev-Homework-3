@@ -42,13 +42,15 @@
     position: relative;
     transition: $general-transition;
     font-weight: 600;
+    font-size: 1.2rem;
 
     .rating {
       color: whitesmoke;
       top: 0;
       right: 0;
-      width: 22%;
+      width: 25%;
       text-align: end;
+      font-size: 1rem;
       @include screenSize('medium') {
         width: 12rem;
       }
@@ -62,14 +64,13 @@
     }
     &-duration {
       position: absolute;
-      bottom: 3.3rem;
+      bottom: 3.35rem;
       right: 0rem;
       background: rgba(31, 30, 30, 0.75);
       width: 4rem;
       padding: 0 1rem;
       font-weight: 800;
       letter-spacing: 1px;
-      font-style: italic;
       border-top-left-radius: 0.4rem;
       backdrop-filter: 10px;
       font-size: 0.8rem;

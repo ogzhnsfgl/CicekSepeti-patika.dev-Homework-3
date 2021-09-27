@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Rating from './Rating';
 import Modal from './Modal';
 
 const Card = (props) => {
   const { id, title, duration, poster, stars: count } = props.item;
   const { changeStars, deleteCard } = props;
-  const [isRender, setIsRender] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [stars, setStars] = useState(count);
 
-  console.log('card:', props.item);
   return (
     <div className="card">
       <div className="card-play-button">
@@ -27,12 +25,7 @@ const Card = (props) => {
       <div className="card-body">
         <div className="card-body-title">{title}</div>
         <div className="card-body-duration">{duration}</div>
-        <Rating
-          item={props.item}
-          changeStars={changeStars}
-          stars={stars}
-          setStars={setStars}
-        />
+        <Rating item={props.item} stars={stars} setStars={setStars} />
       </div>
       <button className="card-btn" onClick={() => deleteCard(id)}>
         X
