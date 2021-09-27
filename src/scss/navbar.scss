@@ -1,52 +1,99 @@
 .header {
   padding: 1rem 1rem;
-  height: 5rem;
-  border-bottom: 1px solid black;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+  max-height: 5rem;
+  @include screenSize('medium') {
+    max-height: 9rem;
+  }
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.562);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.63);
 
   &-wrapper {
-    width: 95vw;
+    @include screenSize('medium') {
+      flex-wrap: wrap;
+    }
+    width: 93vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   &-logo {
-    font-size: 2rem;
-    letter-spacing: 1.2px;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
     font-family: 'Monoton', cursive;
-
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      to right,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      violet
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     &::before {
+      line-height: 5rem;
       content: '';
       background: url(../assets/logo.png);
       width: 2rem;
-      height: 2rem;
+      height: 1.8rem;
       display: inline-block;
       z-index: 1;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       margin-right: 0.8rem;
+      margin-left: 2rem;
     }
   }
-  &-input {
+  &-input-group {
+    @include screenSize('medium') {
+      order: 3;
+      width: 80%;
+      margin: 1rem auto;
+      padding: 0.5rem;
+    }
     width: 24rem;
     height: 2.5rem;
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid rgb(137, 112, 153);
+    color: rgb(137, 112, 153);
     border-radius: 1rem;
+    &:active,
+    &:focus-within {
+      border: 1px solid rgb(82, 67, 224);
+      color: rgb(212, 181, 231);
+    }
     input {
+      width: 100%;
       background-color: transparent;
       border: none;
       outline: none;
       margin-left: 0.2rem;
+      &::placeholder {
+        color: rgb(128, 135, 141);
+      }
+      &::-webkit-search-cancel-button {
+        appearance: none;
+      }
+      &:focus {
+        color: white;
+        .fas {
+          color: aliceblue;
+        }
+      }
     }
     i {
       margin-left: 0.4rem;
     }
   }
+
   &-social-menu {
     a {
       padding: 0 0.5rem;

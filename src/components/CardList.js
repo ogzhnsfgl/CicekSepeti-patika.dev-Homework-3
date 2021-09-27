@@ -4,14 +4,17 @@ import axios from 'axios';
 import Card from './Card';
 
 const CardList = () => {
-  const { cardList, setCardList } = useCardList();
+  const { cardList, setCardList, filteredList, setFilteredList } =
+    useCardList();
   const [isLoading, setisLoading] = useState(true);
+  console.log('comp:', filteredList);
 
   const fetchData = async () => {
     const res = await axios(
       'https://614f3e1cb4f6d30017b48511.mockapi.io/api/youtube'
     );
     setCardList(res.data);
+    setFilteredList(res.data);
     setisLoading(false);
   };
 
@@ -22,9 +25,9 @@ const CardList = () => {
   return (
     <div className="container">
       <div className="cardList">
-        {isLoading && <div className="loading">LOADING...</div>}
+        {isLoading && <div className="loading"></div>}
         {!isLoading &&
-          cardList.map((card, index) => {
+          filteredList.map((card, index) => {
             if (index < 10) {
               return <Card key={card.id} item={card} />;
             }
