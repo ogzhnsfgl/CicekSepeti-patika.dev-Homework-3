@@ -14,7 +14,7 @@ const CardProvider = ({ children }) => {
   };
   const filterCard = (input) => {
     const filteredCard = cardList.filter((card) =>
-      card.title.toLowerCase().includes(input)
+      card.title.toLowerCase().includes(input.toLowerCase())
     );
     setFilteredList(filteredCard);
   };
