@@ -6,7 +6,6 @@ import Card from './Card';
 const CardList = () => {
   const { setCardList, filteredList, setFilteredList } = useCardList();
   const [isLoading, setisLoading] = useState(true);
-  console.log('comp:', filteredList);
 
   const fetchData = async () => {
     const res = await axios(
