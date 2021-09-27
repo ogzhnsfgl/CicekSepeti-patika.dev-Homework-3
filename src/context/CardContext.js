@@ -19,6 +19,13 @@ const CardProvider = ({ children }) => {
     setFilteredList(filteredCard);
   };
 
+  const setStars = (count, id) => {
+    const items = [...cardList];
+    items[id - 1].stars = count;
+    setCardList(items);
+    setFilteredList(items);
+  };
+
   const values = {
     cardList,
     setCardList,
@@ -26,6 +33,7 @@ const CardProvider = ({ children }) => {
     filterCard,
     filteredList,
     setFilteredList,
+    setStars,
   };
   return <CardContext.Provider value={values}>{children}</CardContext.Provider>;
 };

@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-const Rating = ({ count }) => {
-  const [starCount, setstarCount] = useState(count);
-
-  useEffect(() => {
-    setstarCount(count);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+const Rating = (props) => {
+  const { id, title } = props.item;
+  const { changeStars, stars: count, setStars } = props;
 
   const handleClick = (x) => {
-    setstarCount(x + 1);
+    setStars(x + 1);
   };
+
+  console.log(title, count);
 
   return (
     <div className="rating">
-      {[...Array(starCount)].map((item, index) => {
+      {[...Array(count)].map((item, index) => {
         return (
           <i
             key={index}
@@ -23,12 +21,12 @@ const Rating = ({ count }) => {
           ></i>
         );
       })}
-      {[...Array(5 - starCount)].map((item, index) => {
+      {[...Array(5 - count)].map((item, index) => {
         return (
           <i
-            key={index + starCount}
+            key={index + count}
             className="far fa-star"
-            onClick={() => handleClick(index + starCount)}
+            onClick={() => handleClick(index + count)}
           ></i>
         );
       })}

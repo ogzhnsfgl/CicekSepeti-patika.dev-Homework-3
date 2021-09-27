@@ -1,14 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useCardList } from '../context/CardContext';
+import { memo } from 'react';
 
-const Navbar = () => {
-  const { filterCard } = useCardList();
-  const [input, setInput] = useState('');
-
-  useEffect(() => {
-    filterCard(input);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [input]);
+const Navbar = ({ input, setInput }) => {
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <header className="header">
@@ -21,8 +16,8 @@ const Navbar = () => {
             name="search"
             className="header-input"
             placeholder="Search..."
-            onChange={(e) => setInput(e.target.value)}
             value={input}
+            onChange={(e) => handleInput(e)}
           />
         </div>
         <div className="header-social-menu">
@@ -49,4 +44,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
