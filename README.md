@@ -1,4 +1,4 @@
-![Banner](./src/images/design/banner.jpg)
+![Banner](./src/assets/banner.jpg)
 
 # **Çiceksepeti & patika.dev Bootcamp** Homework 3
 
