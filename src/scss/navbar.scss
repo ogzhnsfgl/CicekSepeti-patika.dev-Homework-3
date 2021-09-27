@@ -76,6 +76,7 @@
       border: none;
       outline: none;
       margin-left: 0.2rem;
+      color: gray;
       &::placeholder {
         color: rgb(128, 135, 141);
       }
@@ -83,9 +84,9 @@
         appearance: none;
       }
       &:focus {
-        color: white;
+        color: whitesmoke;
         .fas {
-          color: aliceblue;
+          color: whitesmoke;
         }
       }
     }
