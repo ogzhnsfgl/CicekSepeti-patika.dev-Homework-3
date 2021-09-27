@@ -7,7 +7,7 @@ const Card = ({ item }) => {
   const { deleteCard } = useCardList();
   const [showModal, setShowModal] = useState(false);
 
-  const { id, title, duration, poster, stars, author, embedLink } = item;
+  const { id, title, duration, poster, stars } = item;
   return (
     <div className="card">
       <div className="card-play-button">
