@@ -8,7 +8,7 @@ const Modal = (props) => {
   const { setShowModal, showModal, stars, setStars } = props;
 
   const handleModalClose = (e) => {
-    if (e.target.className == 'modal-wrapper') {
+    if (e.target.className === 'modal-wrapper') {
       setShowModal(!showModal);
     }
   };
