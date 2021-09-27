@@ -4,8 +4,7 @@ import axios from 'axios';
 import Card from './Card';
 
 const CardList = () => {
-  const { cardList, setCardList, filteredList, setFilteredList } =
-    useCardList();
+  const { setCardList, filteredList, setFilteredList } = useCardList();
   const [isLoading, setisLoading] = useState(true);
   console.log('comp:', filteredList);
 
@@ -20,6 +19,7 @@ const CardList = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -27,10 +27,8 @@ const CardList = () => {
       <div className="cardList">
         {isLoading && <div className="loading"></div>}
         {!isLoading &&
-          filteredList.map((card, index) => {
-            if (index < 10) {
-              return <Card key={card.id} item={card} />;
-            }
+          filteredList.map((card) => {
+            return <Card key={card.id} item={card} />;
           })}
       </div>
     </div>
