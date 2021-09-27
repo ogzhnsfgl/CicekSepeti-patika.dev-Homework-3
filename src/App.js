@@ -74,9 +74,9 @@ function App() {
 
   /* Delete card from filtered list */
   const deleteCard = (id) => {
-    const filteredCard = fetchState.data.filter((card) => card.id !== id);
-    // setCardList(filteredCard);
-    setFilteredList(filteredCard);
+    const leftCards = fetchState.data.filter((card) => card.id !== id);
+    setFetchState((prev) => ({ ...prev, data: leftCards }));
+    setFilteredList(leftCards);
   };
 
   return (
