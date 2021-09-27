@@ -98,6 +98,10 @@
     a {
       padding: 0 0.5rem;
       color: whitesmoke;
+      transition: $general-transition;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

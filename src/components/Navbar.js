@@ -26,13 +26,21 @@ const Navbar = () => {
           />
         </div>
         <div className="header-social-menu">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://open.spotify.com/user/ogzhnn?si=84b3b2fe6cfb4f87"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-spotify fa-2x"></i>
           </a>
           <a href="http://" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-youtube fa-2x"></i>
           </a>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com/ogzhnn_"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-twitter fa-2x"></i>
           </a>
         </div>

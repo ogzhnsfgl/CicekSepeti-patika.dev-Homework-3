@@ -21,7 +21,7 @@
 
   &-img {
     overflow: hidden;
-    transition: all 3s;
+    transition: $general-transition;
     height: 100%;
 
     img {
@@ -40,7 +40,7 @@
     padding: 0 0.5rem;
     z-index: 1;
     position: relative;
-    transition: all 1s;
+    transition: $general-transition;
     font-weight: 600;
 
     .rating {
@@ -62,9 +62,9 @@
     }
     &-duration {
       position: absolute;
-      bottom: 3.4rem;
+      bottom: 3.3rem;
       right: 0rem;
-      background: rgba(31, 30, 30, 0.555);
+      background: rgba(31, 30, 30, 0.75);
       width: 4rem;
       padding: 0 1rem;
       font-weight: 800;
@@ -88,8 +88,8 @@
     background-color: rgba(143, 15, 15, 0.767);
     display: block;
     opacity: 0;
-    transition: all 1s;
-    border-bottom-left-radius: 1.2rem;
+    transition: $general-transition;
+    border-bottom-left-radius: 0.5rem;
   }
 
   &-play-button {
@@ -106,14 +106,15 @@
     justify-content: center;
     opacity: 0;
     background-color: transparent;
-    transition: all 1s;
+    transition: $general-transition;
 
     .fa-play-circle {
       color: white;
-      transition: all 1s;
+      transition: $general-transition;
     }
     .fa-play-circle:hover {
-      color: rgb(223, 162, 223);
+      color: rgb(178, 143, 218);
+      transform: scale(1.1);
     }
   }
 
