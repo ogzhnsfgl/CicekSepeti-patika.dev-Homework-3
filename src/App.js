@@ -3,6 +3,7 @@ import CardList from './components/CardList';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
+import alertify from 'alertifyjs';
 
 /* Initial states */
 const initialState = {
@@ -64,19 +65,14 @@ function App() {
     filterList(input);
   }, [filterList, input]);
 
-  /* Control for stars */
-  const changeStars = (id, count) => {
-    const items = [...fetchState.data];
-    items[id - 1].stars = count;
-    setFetchState((prev) => ({ ...prev, data: items }));
-    setFilteredList(items);
-  };
-
   /* Delete card from filtered list */
   const deleteCard = (id) => {
+    const deletedItem = fetchState.data.find((item) => item.id === id);
+    console.log(deletedItem);
     const leftCards = fetchState.data.filter((card) => card.id !== id);
     setFetchState((prev) => ({ ...prev, data: leftCards }));
     setFilteredList(leftCards);
+    alertify.notify(`Deleted! <hr> <strong>${deletedItem.title}`, 'warning', 4);
   };
 
   return (
@@ -85,7 +81,6 @@ function App() {
       <CardList
         cardList={filteredList}
         isLoading={fetchState.loading}
-        changeStars={changeStars}
         deleteCard={deleteCard}
       />
       <Footer />

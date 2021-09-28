@@ -4,7 +4,7 @@ import Modal from './Modal';
 
 const Card = (props) => {
   const { id, title, duration, poster, stars: count } = props.item;
-  const { changeStars, deleteCard } = props;
+  const { deleteCard } = props;
   const [showModal, setShowModal] = useState(false);
   const [stars, setStars] = useState(count);
 
@@ -25,7 +25,12 @@ const Card = (props) => {
       <div className="card-body">
         <div className="card-body-title">{title}</div>
         <div className="card-body-duration">{duration}</div>
-        <Rating item={props.item} stars={stars} setStars={setStars} />
+        <Rating
+          item={props.item}
+          stars={stars}
+          setStars={setStars}
+          title={title}
+        />
       </div>
       <button className="card-btn" onClick={() => deleteCard(id)}>
         X
@@ -34,7 +39,6 @@ const Card = (props) => {
         item={props.item}
         showModal={showModal}
         setShowModal={setShowModal}
-        changeStars={changeStars}
         stars={stars}
         setStars={setStars}
       />

@@ -2,7 +2,7 @@ import Card from './Card';
 import noResult from '../assets/no-result.png';
 
 const CardList = (props) => {
-  const { cardList, isLoading, changeStars, deleteCard } = props;
+  const { cardList, isLoading, deleteCard } = props;
 
   return (
     <div className="container">
@@ -14,14 +14,7 @@ const CardList = (props) => {
         {!isLoading &&
           cardList.length > 0 &&
           cardList.map((card) => {
-            return (
-              <Card
-                key={card.id}
-                item={card}
-                changeStars={changeStars}
-                deleteCard={deleteCard}
-              />
-            );
+            return <Card key={card.id} item={card} deleteCard={deleteCard} />;
           })}
       </div>
     </div>

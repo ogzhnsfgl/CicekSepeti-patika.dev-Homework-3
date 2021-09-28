@@ -6,6 +6,7 @@
 @import 'footer.scss';
 @import 'navbar.scss';
 @import 'card.scss';
+@import '../../node_modules/alertifyjs/build/css/alertify.min.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap');
 
@@ -32,5 +33,39 @@ body {
   margin: 0 auto;
   @include screenSize('large') {
     max-width: 100vw;
+  }
+}
+
+.ajs-message.ajs {
+  text-transform: capitalize;
+  &-warning {
+    text-align: center;
+    font-size: 1.1rem;
+    @include screenSize('large') {
+      font-size: 0.9rem;
+    }
+    color: whitesmoke !important;
+    background-color: #470c0cbe !important;
+    border-radius: 0.1rem;
+    border: 0.3px solid gray;
+    box-shadow: rgba(177, 174, 174, 0.07) 0px 1px 2px,
+      rgba(182, 178, 178, 0.07) 0px 2px 4px,
+      rgba(167, 165, 165, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(197, 192, 192, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  &-custom {
+    font-size: 1.1rem;
+    @include screenSize('large') {
+      font-size: 0.9rem;
+    }
+    text-align: center;
+    box-shadow: rgba(177, 174, 174, 0.07) 0px 1px 2px,
+      rgba(182, 178, 178, 0.07) 0px 2px 4px,
+      rgba(167, 165, 165, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(197, 192, 192, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 0.1rem;
+    border: 0.3px solid gray;
+    color: whitesmoke !important;
+    background-color: darken(rgba(95, 16, 168, 0.747), 20%) !important;
   }
 }

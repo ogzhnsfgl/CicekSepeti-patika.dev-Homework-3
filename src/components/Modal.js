@@ -27,7 +27,12 @@ const Modal = (props) => {
           <div className="modal-info-author">{author}</div>
           <div className="modal-info-detail">
             <div className="modal-info-duration">Duration: {duration} </div>
-            <Rating item={props.item} stars={stars} setStars={setStars} />
+            <Rating
+              item={props.item}
+              stars={stars}
+              setStars={setStars}
+              title={title}
+            />
           </div>
         </div>
         <div className="modal-video">
