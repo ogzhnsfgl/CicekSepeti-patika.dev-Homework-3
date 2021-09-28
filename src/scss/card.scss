@@ -2,7 +2,7 @@
   width: 35rem;
   height: 20rem;
   @include screenSize('medium') {
-    width: 25rem;
+    width: 100%;
     height: 15rem;
   }
   overflow: hidden;

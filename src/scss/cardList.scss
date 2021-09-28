@@ -4,13 +4,15 @@
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   padding: 3rem 2rem;
-  width: 100%;
   min-height: 95vh;
   @include screenSize('medium') {
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    width: 95vw;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     padding: 3rem 0.5rem;
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
   }
 }
 
