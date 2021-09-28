@@ -22,7 +22,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    @include screenSize('large') {
+    @include screenSize('xlarge') {
       flex-direction: column-reverse;
     }
 
@@ -33,7 +33,7 @@
       box-shadow: rgba(73, 56, 77, 0.25) 0px 54px 55px,
         rgba(51, 36, 50, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
         rgba(47, 34, 48, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      @include screenSize('large') {
+      @include screenSize('xlarge') {
         width: 90vw;
       }
     }
@@ -46,7 +46,7 @@
       font-size: 1.5rem;
       padding: 1rem;
       color: rgb(221, 217, 221);
-      @include screenSize('large') {
+      @include screenSize('xlarge') {
         width: 90vw;
         margin-right: 0;
       }
@@ -56,7 +56,7 @@
         font-size: 3rem;
         height: 10rem;
         border-bottom: 3px solid purple;
-        @include screenSize('large') {
+        @include screenSize('xlarge') {
           font-size: 1.7rem;
           height: unset;
         }
@@ -65,7 +65,7 @@
         font-size: 1rem;
         opacity: 0.5;
         padding: 0.5rem 0;
-        @include screenSize('large') {
+        @include screenSize('xlarge') {
           font-size: 0.8rem;
         }
       }
