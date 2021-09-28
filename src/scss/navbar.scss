@@ -20,6 +20,9 @@
 
   &-logo {
     font-size: 2.1rem;
+    @include screenSize('medium') {
+      font-size: 1.7rem;
+    }
     letter-spacing: 1px;
     font-family: 'Monoton', cursive;
     display: flex;
@@ -82,7 +85,8 @@
         color: rgb(128, 135, 141);
         letter-spacing: 1.5px;
       }
-      &::-webkit-search-cancel-button {
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-decoration {
         appearance: none;
       }
       &:focus {
@@ -104,6 +108,12 @@
       transition: $general-transition;
       &:hover {
         opacity: 0.8;
+      }
+
+      i {
+        @include screenSize('medium') {
+          font-size: 1.4rem;
+        }
       }
     }
   }

@@ -43,6 +43,15 @@
     transition: $general-transition;
     font-weight: 600;
     font-size: 1.2rem;
+    @include screenSize('medium') {
+      font-size: 1.1rem;
+    }
+    &-title {
+      width: 75%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
     .rating {
       color: whitesmoke;
@@ -52,10 +61,13 @@
       text-align: end;
       font-size: 1rem;
       @include screenSize('medium') {
-        width: 12rem;
+        width: 5rem;
       }
       .fa-star {
         margin-left: 2px;
+        @include screenSize('medium') {
+          font-size: 0.7rem;
+        }
       }
       .fa-star:hover {
         transform: scale(1.05);

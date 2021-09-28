@@ -48,6 +48,7 @@
       color: rgb(221, 217, 221);
       @include screenSize('large') {
         width: 90vw;
+        margin-right: 0;
       }
 
       &-title {
