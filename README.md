@@ -1,4 +1,5 @@
-#HIGHER
+# :rainbow:HIGHER
+
 ![Banner](./src/assets/banner.jpg)
 
 # **Çiceksepeti & patika.dev Bootcamp** Homework 3
