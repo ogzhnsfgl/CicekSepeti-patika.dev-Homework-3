@@ -11,8 +11,9 @@
 - Created with ReactJS and SASS.
 - Responsive UI.
 - Used MockApi created by me.
-- React-modal library used.
+- React-modal & react-toastify library used.
 - Auto deployment on Vercel.
+-
 
 ## Lighthouse Performance Result:
 
