@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
 import alertify from 'alertifyjs';
+import { fetchData } from './services/api';
 
 /* Initial states */
 const initialState = {
@@ -22,27 +23,13 @@ function App() {
   /* ComponentDidMount - Fetcing Data */
   useEffect(() => {
     const controller = new AbortController();
-    const signal = controller.signal;
 
-    const fetchData = async () => {
-      try {
-        const res = await fetch(
-          'https://614f3e1cb4f6d30017b48511.mockapi.io/api/youtube',
-          {
-            method: 'get',
-            signal: signal,
-          }
-        );
-        const data = await res.json();
-
-        setFetchState((prev) => ({ ...prev, data }));
-      } catch (error) {
-        setFetchState((prev) => ({ ...prev, error }));
-      } finally {
-        setFetchState((prev) => ({ ...prev, loading: false }));
+    (async () => {
+      const { loading, error, data } = await fetchData();
+      if (data.length > 0) {
+        setFetchState({ loading, error, data });
       }
-    };
-    fetchData();
+    })();
 
     return () => {
       controller.abort();
@@ -81,6 +68,7 @@ function App() {
       <CardList
         cardList={filteredList}
         isLoading={fetchState.loading}
+        error={fetchState.error}
         deleteCard={deleteCard}
       />
       <Footer />

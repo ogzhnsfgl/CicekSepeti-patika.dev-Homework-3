@@ -20,7 +20,7 @@ const Card = (props) => {
         >
           <i className="far fa-play-circle fa-4x"></i>
         </div>
-        <img src={poster} alt="" />
+        <img src={poster} alt={`${title}-img`} />
       </div>
       <div className="card-body">
         <div className="card-body-title">{title}</div>

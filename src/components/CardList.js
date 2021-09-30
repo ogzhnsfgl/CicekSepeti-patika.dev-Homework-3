@@ -5,7 +5,7 @@ const CardList = (props) => {
   const { cardList, isLoading, deleteCard } = props;
 
   return (
-    <div className="container">
+    <main className="container">
       <div className="cardList">
         {isLoading && <div className="loading"></div>}
         {!isLoading && cardList.length === 0 && (
@@ -17,7 +17,7 @@ const CardList = (props) => {
             return <Card key={card.id} item={card} deleteCard={deleteCard} />;
           })}
       </div>
-    </div>
+    </main>
   );
 };
 
