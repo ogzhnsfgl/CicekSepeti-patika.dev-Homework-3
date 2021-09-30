@@ -3,7 +3,7 @@ import CardList from './components/CardList';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
-import alertify from 'alertifyjs';
+import { toast, ToastContainer } from 'react-toastify';
 import { fetchData } from './services/api';
 
 /* Initial states */
@@ -55,11 +55,19 @@ function App() {
   /* Delete card from filtered list */
   const deleteCard = (id) => {
     const deletedItem = fetchState.data.find((item) => item.id === id);
-    console.log(deletedItem);
     const leftCards = fetchState.data.filter((card) => card.id !== id);
     setFetchState((prev) => ({ ...prev, data: leftCards }));
     setFilteredList(leftCards);
-    alertify.notify(`Deleted! <hr> <strong>${deletedItem.title}`, 'warning', 4);
+    toast.error(`${deletedItem.title} deleted!`, {
+      position: 'bottom-right',
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    });
   };
 
   return (
@@ -70,6 +78,17 @@ function App() {
         isLoading={fetchState.loading}
         error={fetchState.error}
         deleteCard={deleteCard}
+      />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
       />
       <Footer />
     </div>
